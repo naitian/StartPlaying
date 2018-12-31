@@ -1,0 +1,28 @@
+body {
+    padding: 0 30px;
+    margin: 0;
+    box-sizing: border-box;
+
+    color: #E79D96;
+    background-color: #453444;
+
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.clock {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.vid-container {
+    text-align: center;
+}
+
+.tweet-embed {
+}
