@@ -1,7 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     padding: 0 30px;
     margin: 0;
-    box-sizing: border-box;
 
     color: #F74D3E;
     background-color: #0A0A18;
@@ -24,5 +27,23 @@ h1 {
     text-align: center;
 }
 
-.tweet-embed {
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+
+    padding: 2px;
+
+    font-size: 0.8rem;
+    background-color: #F74D3E;
+    color: #0A0A18;
+}
+
+footer .float-right {
+    float: right;
+}
+
+footer a {
+    color: #0A0A18;
 }
