@@ -1,19 +1,23 @@
 const presets = {
   'rewind': {
     id: 'YbJOTdZBX1g',
-    timestamp: '6:58'
+    timestamp: '6:58',
+    blurb: '<a href="https://twitter.com/fab_nz/status/1079555364759031808">YouTube Rewind 2018, Will Smith will say "uhhhh that\'s hot" at exactly midnight.</a>'
   },
   'ddu': {
     id: 'IHNzOHi8sJs',
-    timestamp: '1:18'
+    timestamp: '1:18',
+    blurb: '<a href="https://twitter.com/black2dpink824/status/1079676880746356737">Ddu-Du Ddu-Du, BLACKPINK will hit you with that Ddu-du Ddu-du just as 2019 begins</a>'
   },
   'abba': {
     id: '3Uo0JAUWijM',
-    timestamp: '0:46'
+    timestamp: '0:46',
+    blurb: '<a href="https://twitter.com/morganllaughlin/status/1079695056993468416">Happy New Year by ABBA, ABBA will be the first people to tell you happy new year</a>'
   },
   'umich': {
     id: 'pIKl1NdR3rk',
-    timestamp: '01:25'
+    timestamp: '01:25',
+    blurb: 'the Michigan Transportation Musical, Billy Magic will introduce himself at midnight.'
   }
 }
 
@@ -98,6 +102,10 @@ function renderCountdown() {
 }
 
 function ringInTheNewYear(vid) {
+  if (vid.blurb) {
+    let h1 = document.querySelector('h1');
+    h1.innerHTML = 'if you start playing... ' + vid.blurb;
+  }
   initYoutubePlayerAPI();
   renderCountdown();
 }

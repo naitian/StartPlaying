@@ -16,6 +16,10 @@ h1 {
     font-size: 2rem;
 }
 
+h1 a {
+    color: #F74D3E;
+}
+
 .clock {
     text-align: center;
     font-size: 4rem;
