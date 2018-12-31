@@ -18,6 +18,7 @@ const GOTIME = new Date('January 1, 2019 00:00:00');
 var player;
 var vid;
 var video_countdown = false;
+var showing_presets = false;
 
 function initYoutubePlayerAPI() {
   var tag = document.createElement('script');
@@ -97,12 +98,36 @@ function ringInTheNewYear(vid) {
   renderCountdown();
 }
 
-function handleCustom(e) {
+function generatePresetList() {
+  let url = `${window.location.origin}${window.location.pathname}`;
+  let result = '';
+  for (let name in presets) {
+    let href = `${url}?preset=${name}`;
+    let a = `<a href=${href}>${name}</a> `;
+    result += a;
+  }
+  return result + ' | ';
+}
+
+function handlePresets(e) {
   console.log('click');
+  let presets_container = document.querySelector('.presets');
+  let presets_button = document.querySelector('.show-presets');
+  if (showing_presets) {
+    presets_container.innerHTML = '';
+    presets_button.innerText = 'presets';
+  } else {
+    presets_container.innerHTML = generatePresetList();
+    presets_button.innerText = 'hide';
+  }
+  showing_presets = !showing_presets;
 }
 
 window.onload = function () {
   console.log('Loaded');
+
+  let presets_button = document.querySelector('.show-presets');
+  presets_button.onclick = handlePresets;
 
   let url = new URL(window.location.href);
   if (url.searchParams.get('custom')) {
