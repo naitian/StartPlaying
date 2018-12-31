@@ -27,6 +27,19 @@ h1 {
     text-align: center;
 }
 
+.custom-form {
+    margin: 0 auto;
+    width: 600px;
+}
+.custom-form input {
+    width: 100%;
+    background: none;
+    color: #F74D3E;
+    border: none;
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+
 footer {
     position: fixed;
     bottom: 0;

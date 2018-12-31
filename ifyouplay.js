@@ -72,7 +72,6 @@ function playVideoIfTime() {
     console.log('Played Video');
   } else {
     if (delta < 0) return;
-    console.log('Waiting .5 seconds');
     console.log('Waiting', (delta - seconds) * 0.5, 'seconds');
     window.setTimeout(playVideoIfTime, (delta - seconds) * 500);
   }
@@ -90,13 +89,16 @@ function renderCountdown() {
   var timeString = date.toISOString().substr(11, 8);
 
   document.querySelector('.clock').innerText = timeString;
-  console.log(timeString)
   window.setTimeout(renderCountdown, 500);
 }
 
 function ringInTheNewYear(vid) {
   initYoutubePlayerAPI();
   renderCountdown();
+}
+
+function handleCustom(e) {
+  console.log('click');
 }
 
 window.onload = function () {
