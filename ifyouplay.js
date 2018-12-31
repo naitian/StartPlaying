@@ -10,6 +10,10 @@ const presets = {
   'abba': {
     id: '3Uo0JAUWijM',
     timestamp: '0:46'
+  },
+  'umich': {
+    id: 'pIKl1NdR3rk',
+    timestamp: '01:25'
   }
 }
 
