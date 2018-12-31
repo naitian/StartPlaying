@@ -20,7 +20,12 @@ h1 {
     text-align: center;
     font-size: 4rem;
     font-weight: bold;
+}
+
+.clock-label {
     margin-bottom: 2rem;
+    text-align: center;
+    cursor: pointer;
 }
 
 .vid-container {

@@ -127,11 +127,24 @@ function handlePresets(e) {
   showing_presets = !showing_presets;
 }
 
+function handleClock(e) {
+  let clock_button = e.target;
+  video_countdown = !video_countdown;
+  if (video_countdown) {
+    clock_button.innerText = 'until video plays';
+  } else {
+    clock_button.innerText = 'until 2019!';
+  }
+  renderCountdown();
+}
+
 window.onload = function () {
   console.log('Loaded');
 
   let presets_button = document.querySelector('.show-presets');
   presets_button.onclick = handlePresets;
+  let clock_button = document.querySelector('.clock-label');
+  clock_button.onclick = handleClock;
 
   let url = new URL(window.location.href);
   if (url.searchParams.get('custom')) {
