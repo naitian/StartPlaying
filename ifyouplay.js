@@ -103,8 +103,8 @@ function renderCountdown() {
 
 function ringInTheNewYear(vid) {
   if (vid.blurb) {
-    let h1 = document.querySelector('h1');
-    h1.innerHTML = 'if you start playing... ' + vid.blurb;
+    let blurb = document.querySelector('.blurb');
+    blurb.innerHTML = vid.blurb;
   }
   initYoutubePlayerAPI();
   renderCountdown();
