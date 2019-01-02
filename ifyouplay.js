@@ -21,7 +21,7 @@ const presets = {
   }
 }
 
-const GOTIME = new Date('January 1, 2019 00:00:00');
+const GOTIME = new Date('January 1, 2020 00:00:00');
 
 var player;
 var vid;
@@ -97,7 +97,11 @@ function renderCountdown() {
   date.setSeconds(remaining);
   var timeString = date.toISOString().substr(11, 8);
 
-  document.querySelector('.clock').innerText = timeString;
+  if (remaining < 24 * 60 * 60) {
+    document.querySelector('.clock').innerText = timeString;
+  } else {
+    document.querySelector('.clock').innerText = "A Long Freaking Time";
+  }
   window.setTimeout(renderCountdown, 500);
 }
 
