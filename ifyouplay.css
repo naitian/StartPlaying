@@ -38,11 +38,17 @@ h1 .blurb {
 
 .vid-container {
     text-align: center;
+    width: 600px;
+    height: 390px;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .custom-form {
     margin: 0 auto;
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 30px;
 }
 .custom-form input {
     width: 100%;
