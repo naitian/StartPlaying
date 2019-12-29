@@ -1,27 +1,41 @@
 const presets = {
-  rewind: {
-    id: "YbJOTdZBX1g",
-    timestamp: "6:58",
-    blurb:
-      '<a href="https://twitter.com/fab_nz/status/1079555364759031808">YouTube Rewind 2018, Will Smith will say "uhhhh that\'s hot" at exactly midnight.</a>'
-  },
   ddu: {
     id: "IHNzOHi8sJs",
     timestamp: "1:18",
     blurb:
-      '<a href="https://twitter.com/black2dpink824/status/1079676880746356737">Ddu-Du Ddu-Du, BLACKPINK will hit you with that Ddu-du Ddu-du just as 2019 begins</a>'
+      '<a href="https://twitter.com/black2dpink824/status/1079676880746356737">Ddu-Du Ddu-Du, BLACKPINK will hit you with that Ddu-du Ddu-du just as 2019 begins</a>',
+    display: true
   },
   abba: {
     id: "3Uo0JAUWijM",
     timestamp: "0:46",
     blurb:
-      '<a href="https://twitter.com/morganllaughlin/status/1079695056993468416">Happy New Year by ABBA, ABBA will be the first people to tell you happy new year</a>'
+      '<a href="https://twitter.com/morganllaughlin/status/1079695056993468416">Happy New Year by ABBA, ABBA will be the first people to tell you happy new year</a>',
+    display: true
   },
   umich: {
     id: "pIKl1NdR3rk",
     timestamp: "01:25",
     blurb:
-      "the Michigan Transportation Musical, Billy Magic will introduce himself at midnight."
+      "the Michigan Transportation Musical, Billy Magic will introduce himself at midnight.",
+    display: true
+  },
+  gambino: {
+    id: "ExVtrghW5Y4",
+    timestamp: "1:48",
+    blurb: '<a href="https://twitter.com/_emmakitchen/status/1210666080986906624">iv. sweatpants you will enter the new decade knowing that fiskers don’t make noise when they start up</a>',
+    display: true
+  },
+  rachstar: {
+    id: "1Crys4ERTVo",
+    timestamp: "1:53",
+    blurb: "Rach Star, the brass hits at midnight",
+    display: true
+  },
+  crown17: {
+    id: "OeoGGw4jMy0",
+    timestamp: "11:41",
+    blurb: "It Is, you will be known exactly at midnight"
   }
 };
 
@@ -127,6 +141,9 @@ function generatePresetList() {
   let url = `${window.location.origin}${window.location.pathname}`;
   let result = "";
   for (let name in presets) {
+    if (!presets[name].display) {
+      continue;
+    }
     let href = `${url}?preset=${name}`;
     let a = `<a href=${href}>${name}</a> `;
     result += a;
@@ -177,10 +194,11 @@ window.onload = function() {
     };
   } else {
     vid = presets[url.searchParams.get("preset")];
-    if (!vid)
+    if (!vid) {
       console.error("Preset not found: ", url.searchParams.get("preset"));
-    const items = Object.keys(presets);
-    vid = presets[items[Math.floor(Math.random() * items.length)]];
+      const items = Object.keys(presets);
+      vid = presets[items[Math.floor(Math.random() * items.length)]];
+    }
   }
 
   ringInTheNewYear(vid);
