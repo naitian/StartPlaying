@@ -171,7 +171,7 @@ function handleClock(e) {
   if (video_countdown) {
     clock_button.innerText = "until video plays";
   } else {
-    clock_button.innerText = "until 2019!";
+    clock_button.innerText = "until 2020!";
   }
   renderCountdown();
 }
