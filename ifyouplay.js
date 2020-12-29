@@ -39,7 +39,7 @@ const presets = {
   }
 };
 
-const GOTIME = new Date("January 1, 2020 00:00:00");
+const GOTIME = new Date("January 1, 2021 00:00:00");
 
 var player;
 var vid;
